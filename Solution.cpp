@@ -34,7 +34,22 @@ vector<int> Solution::outputVector(){
      * matches.
      */
 
-    
+    //given any integer n >= 1, and a vector x of length n
+    //return the vector y = Un * x
 
-    return m_outputVector;
+    //Un[i][j]
+    // = 0 if j < i
+    // else = 1
+
+    int iSize = this->m_inputVector.size();
+    int total = 0;
+    //add to the back of the output like a stack
+    //add one more member to the total each time
+    for(int i = 0; i < iSize; i++){
+        total += this->m_inputVector[i];
+        this->m_outputVector.push_back(total);
+    }
+    //need to reverse to meet the problem specs
+    reverse(this->m_outputVector.begin(), this->m_outputVector.end());
+    return this->m_outputVector;
 }
