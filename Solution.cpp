@@ -45,7 +45,7 @@ vector<int> Solution::outputVector(){
     int total = 0;
     //add to the back of the output like a stack
     //add one more member to the total each time
-    for(int i = 0; i < iSize; i++){
+    for(int i = iSize-1; i >=0 ; i--){
         total += this->m_inputVector[i];
         this->m_outputVector.push_back(total);
     }
